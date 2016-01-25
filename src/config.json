@@ -1,0 +1,12 @@
+{
+  "log": {
+    "path": "log.txt"
+  },
+  "server": {
+    "port": 5003,
+    "url": "http://s.lunik.xyz/"
+  },
+  "database": {
+    "path": "./database.json"
+  }
+}
