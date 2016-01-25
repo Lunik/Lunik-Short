@@ -6,6 +6,11 @@ $('.form input[name=regenerate]').click(function () {
   window.location.reload()
 })
 
+$(window).keydown(function (event) {
+  $('.form input[name=url]').css('color', '')
+  if (event.which == 13) postForm()
+})
+
 function postForm () {
   var url = $('.form input[name=url]').val()
   if(url){
