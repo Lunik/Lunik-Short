@@ -33,6 +33,10 @@ html, body{
 }
 
 .form input[type=url]{
+
+	width: 90%;
+	max-width: 500px;
+
 	font-size: 110%;
 
 	border: 5px solid #fff;
