@@ -17,7 +17,6 @@ BD.prototype.load = function () {
 }
 
 BD.prototype.save = function () {
-  Log.print('Saving DB')
   fs.writeFile(config.database.path, JSON.stringify(this.table), function (err) {
     if (err) Log.print(err)
   })
