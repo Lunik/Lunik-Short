@@ -18,7 +18,6 @@ BD.prototype.load = function () {
 
 BD.prototype.save = function () {
   Log.print('Saving DB')
-  console.log(JSON.stringify(this.table))
   fs.writeFile(config.database.path, JSON.stringify(this.table), function (err) {
     if (err) Log.print(err)
   })
@@ -26,7 +25,6 @@ BD.prototype.save = function () {
 
 BD.prototype.add = function(key, value){
   this.table[key] = value
-  console.log(this.table)
   this.save()
 }
 
