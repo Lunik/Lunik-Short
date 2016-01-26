@@ -13,10 +13,10 @@ $(window).keydown(function (event) {
 
 function postForm () {
   var url = $('.form input[name=url]').val()
-  if(url){
+  if (url) {
     $.post('/new?', {url: url}, function (data) {
       data = JSON.parse(data)
-      if(data.err){
+      if (data.err) {
         $('.form input[name=url]').css('color', 'red')
       } else {
         afficheUrl(data.url)

@@ -1,6 +1,6 @@
 var Short = String
 
-Short.prototype.hash = function(){
+Short.prototype.hash = function () {
   var hash = 0, i, chr
   if (this.length == 0) return hash
   for (var i = 0; i < this.length; i++) {

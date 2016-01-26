@@ -22,12 +22,12 @@ BD.prototype.save = function () {
   })
 }
 
-BD.prototype.add = function(key, value){
+BD.prototype.add = function (key, value) {
   this.table[key] = value
   this.save()
 }
 
-BD.prototype.get = function(key){
+BD.prototype.get = function (key) {
   return this.table[key]
 }
 
