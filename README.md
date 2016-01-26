@@ -12,6 +12,7 @@
     $ git clone https://github.com/Lunik/Lunik-Short.git
     $ cd Lunik-Short
     $ npm install
+    $ nano src/config.json
 ##### Run
     $ npm start
 
