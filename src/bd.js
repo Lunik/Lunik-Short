@@ -27,8 +27,12 @@ BD.prototype.add = function (key, value) {
   this.save()
 }
 
-BD.prototype.get = function (key) {
-  return this.table[key]
+BD.prototype.getUrl = function (hash) {
+  return this.table[hash]
+}
+
+BD.prototype.getHash = function (url) {
+  //return this.table[key]
 }
 
 module.exports = new BD()
