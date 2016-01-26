@@ -18,3 +18,15 @@
 
 ## ===== View =====
 ![Nodejs-Short](http://puu.sh/mKcXZ/6cc58d830f.png)
+
+## ===== API =====
+
+    POST http://<YOUR_DOMAIN>/api
+
+### Parameters
+
+|Name	| Type	| Description |
+|:----|:------|:------------|
+|type |string |Specify the type of request (new, getUrl, getHash)|
+|url  |string |Url to short|
+|hash |string |Hash of the shorten url|
