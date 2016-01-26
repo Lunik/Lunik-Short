@@ -25,6 +25,13 @@ function Server () {
     BD.add(hash, url)
     res.end(JSON.stringify({url: config.server.url + hash}))
   })
+  
+  this.app.post('/api', function (req, res) {
+    var url = req.body.url
+    var hash = url.hash()
+    BD.add(hash, url)
+    res.end(config.server.url + hash)
+  })
 
   this.app.get('/*', function (req, res) {
     var hash = req.params[0]
