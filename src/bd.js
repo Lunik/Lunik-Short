@@ -4,6 +4,7 @@ var fs = require('fs')
 
 function BD () {
   this.table = {}
+  this.reversTable = {}
 
   this.load()
 }
@@ -13,6 +14,10 @@ BD.prototype.load = function () {
     this.save()
   } else {
     this.table = JSON.parse(fs.readFileSync(config.database.path, 'utf8'))
+    //init reversTable
+    for(key in this.table){
+      this.reversTable[this.table[key]] = key
+    }
   }
 }
 
@@ -24,15 +29,26 @@ BD.prototype.save = function () {
 
 BD.prototype.add = function (key, value) {
   this.table[key] = value
+  this.reversTable[value] = key
   this.save()
 }
 
 BD.prototype.getUrl = function (hash) {
-  return this.table[hash]
+  var url = this.table[hash]
+  if(url){
+    return url
+  } else {
+    return -1
+  }
 }
 
 BD.prototype.getHash = function (url) {
-  //return this.table[key]
+  var hash = this.reversTable[url]
+  if(hash){
+    return hash
+  } else {
+    return -1
+  }
 }
 
 module.exports = new BD()
