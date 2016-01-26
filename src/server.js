@@ -2,6 +2,7 @@ var Log = require('./log.js')
 var config = require('./config.json')
 var Short = require('./short.js')
 var BD = require('./bd.js')
+var API = require('./api.js')
 
 var express = require('express')
 var http = require('http')
@@ -25,17 +26,14 @@ function Server () {
     BD.add(hash, url)
     res.end(JSON.stringify({url: config.server.url + hash}))
   })
-  
+
   this.app.post('/api', function (req, res) {
-    var url = req.body.url
-    var hash = url.hash()
-    BD.add(hash, url)
-    res.end(config.server.url + hash)
+    API.query(req, res)
   })
 
   this.app.get('/*', function (req, res) {
     var hash = req.params[0]
-    var url = BD.get(hash)
+    var url = BD.getUrl(hash)
     if (url) {
       res.redirect(url)
     } else {
