@@ -35,7 +35,7 @@ function Server () {
     var hash = req.params[0]
     var url = BD.getUrl(hash)
     if (url) {
-      res.redirect(url)
+      res.redirect("http://"+url)
     } else {
       fs.readFile(__dirname + '/public/index.html', function (err, data) {
         if (err) Log.print(err)
