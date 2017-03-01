@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Lunik/Lunik-Short#readme",
   "dependencies": {
-    "body-parser": "^1.15.1",
+    "body-parser": "^1.17.0",
     "express": "^4.14.0",
     "fs": "0.0.2"
   }
